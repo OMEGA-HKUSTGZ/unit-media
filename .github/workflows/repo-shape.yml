@@ -1,0 +1,17 @@
+# Check AGENTS.md, README.md, CLAUDE.md and CONTRIBUTING.md against the OMEGA infra standard (R2).
+# Its own workflow, so it never slows the publish path in deploy-pages.yml.
+name: Repository shape
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+permissions:
+  contents: read
+
+jobs:
+  repo-shape:
+    # @main: the organization's own shared workflow, so a fix to the check reaches every
+    # repository at once; the script it runs is checked out from the same main.
+    uses: OMEGA-HKUSTGZ/.github/.github/workflows/repo-shape.yml@main
