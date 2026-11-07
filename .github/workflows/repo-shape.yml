@@ -1,5 +1,5 @@
 # Check AGENTS.md, README.md, CLAUDE.md and CONTRIBUTING.md against the OMEGA infra standard (R2).
-# Its own workflow, so it never slows the publish path in deploy-pages.yml.
+# Validation only; Pages still publishes main's root through the legacy source.
 name: Repository shape
 
 on:
@@ -11,6 +11,28 @@ permissions:
   contents: read
 
 jobs:
+  assets:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    env:
+      ASSET_BASE_SHA: ${{ github.event.pull_request.base.sha || github.event.before }}
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 2
+          sparse-checkout: |
+            /*
+            !/point-clouds/
+          sparse-checkout-cone-mode: false
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+      - name: Fetch the previously published baseline
+        run: |
+          if [ -n "$ASSET_BASE_SHA" ] && [ "$ASSET_BASE_SHA" != "0000000000000000000000000000000000000000" ]; then
+            git fetch --no-tags --filter=blob:none --depth=1 origin "$ASSET_BASE_SHA"
+          fi
+      - run: node --test scripts/check-assets.test.mjs && node scripts/check-assets.mjs --base "$ASSET_BASE_SHA"
   repo-shape:
     # @main: the organization's own shared workflow, so a fix to the check reaches every
     # repository at once; the script it runs is checked out from the same main.

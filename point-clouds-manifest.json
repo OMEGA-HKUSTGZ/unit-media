@@ -1,0 +1,62 @@
+{
+  "schemaVersion": 1,
+  "origin": "https://omega-hkustgz.github.io/unit-media/",
+  "provenance": {
+    "verifiedAgainst": {
+      "repository": "OMEGA-HKUSTGZ/unit-page",
+      "commit": "b15aa7b6968f8435b9b35dd44bd03050b50bad2d",
+      "directory": "assets/media/point-clouds"
+    },
+    "upstream": {
+      "repository": "SC2I-HKUSTGZ/UniT",
+      "commit": "629ab47ff9b0bb98797b764d78fb7a5468a3fb17",
+      "pathPattern": "assets/demos/<scene>/scene.pnts"
+    },
+    "rightsNote": "Provenance of existing public resources only; no new license or blanket third-party redistribution permission is asserted."
+  },
+  "releases": [
+    {
+      "id": "v1",
+      "dataVersion": "0e1438880f2957264dab2b617f9d36d15db4d9ec",
+      "immutable": true,
+      "files": [
+        {
+          "path": "point-clouds/drift.pnts",
+          "bytes": 7523861,
+          "gitBlobSha": "f583becca3dcec9509ad7fc17e584e957210b5c4",
+          "sha256": "aa708e7013fc7d1b11c731cebd2157dd78390a9eb4e368273b829d8150072aa9"
+        },
+        {
+          "path": "point-clouds/gta_sfm.pnts",
+          "bytes": 52650286,
+          "gitBlobSha": "907f93d9d9487c4d99c64957d27fac2d3ffe4c9f",
+          "sha256": "20a514c5f4e105ba54db88d37b3b5e64eeab45ca6eef3c69d2d6dfbdbd8cbf7a"
+        },
+        {
+          "path": "point-clouds/hkust_intr.pnts",
+          "bytes": 57847839,
+          "gitBlobSha": "2c34a53f3f4397b2dd3b49cb57dc815747241765",
+          "sha256": "c6e03fa4114308a0ecf35c713e6bfc814f421aac6063158858214b82b6775875"
+        },
+        {
+          "path": "point-clouds/hkust_redbird.pnts",
+          "bytes": 16406446,
+          "gitBlobSha": "5282919a2893815e293245b82d505a5e2b3ec645",
+          "sha256": "8f8854fa81995fb4e0ef91270a01366db29d154184682498010afe3f0b97d4ae"
+        },
+        {
+          "path": "point-clouds/hkust_toy.pnts",
+          "bytes": 18088488,
+          "gitBlobSha": "61b87069beb8a2fcb6afda1cd16f6b308424da2f",
+          "sha256": "d26f91e8247e5635996b9193f81071754be8f4a4ae1ef2fa103ec1722fdb9a74"
+        },
+        {
+          "path": "point-clouds/kitti.pnts",
+          "bytes": 28460540,
+          "gitBlobSha": "7c246a0109168fb44224293bd2b12f0e6409b5b3",
+          "sha256": "b794b90d95757b450be5d4e54669d6bc8d184e0bd213285e020bbacd6ecfc74a"
+        }
+      ]
+    }
+  ]
+}
